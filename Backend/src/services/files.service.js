@@ -85,8 +85,8 @@ class FilesService {
         }
     }
 
-    async SearchVideo(body){
-        const {data} = body
+    async SearchVideo(params){
+        const {data} = params
         const JoinData = await pool.query("Select  f.title , f.size , f.created_at , f.file_name from users as u inner join files as f on u.id  = f.user_id where u.username ilike $1 or f.title ilike $2",[`%${data}%`,`%${data}%`])
 
 
@@ -114,6 +114,11 @@ class FilesService {
         return (join(process.cwd(),"src","uploads","videos",filename))
     }
 
+    async DowlandVideo(params) {
+        const {filename} = params
+        const path = join(process.cwd(),"src","uploads","videos",filename)
+        return {path,filename}
+    }
 }
 
 export default new FilesService()

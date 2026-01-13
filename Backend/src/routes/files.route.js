@@ -10,9 +10,12 @@ FilesRouter.post("/api/upload",validion.PostVideoShchema,filesController.PostVid
 FilesRouter.get("/api/info/:id",filesController.GetVideoInfo)
 FilesRouter.put("/api/edit/:id",chekcToken,validion.UpdateVidoeByIdSchema,filesController.UpdateVidoeById)
 FilesRouter.delete("/api/remove/:id",chekcToken,filesController.DeleteVideoById)
-FilesRouter.get("/api/search",validion.SearchVideoSchema,filesController.SearchVideo)
+FilesRouter.get("/api/search/:data",filesController.SearchVideo)
 FilesRouter.get("/api/all/files",filesController.GetAllFiles)
 FilesRouter.get("/api/getvd/:filename",filesController.toGetVideo)
+FilesRouter.get("/api/dowland/:filename",filesController.DowlandVideo)
+
+
 
 
 

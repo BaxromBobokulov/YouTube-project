@@ -25,6 +25,6 @@ export const UpdateVidoeByIdSchema = Joi.object({
     title:Joi.string().required()
 })
 
-export const SearchVideoSchema = Joi.object({
-    data:Joi.string().required()
-})
+// export const SearchVideoSchema = Joi.object({
+//     data:Joi.string().required()
+// })

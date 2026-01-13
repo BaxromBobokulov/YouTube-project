@@ -55,7 +55,7 @@ class FilesController {
 
     async SearchVideo(req,res,next){
         try {
-            const data = await filesService.SearchVideo(req.body)
+            const data = await filesService.SearchVideo(req.params)
             res.status(200).json({
                 status:200,
                 data:data.found
@@ -85,6 +85,15 @@ class FilesController {
                 next(error)
             }
         }
+
+    async DowlandVideo(req,res,next){
+        try {
+            const data = await filesService.DowlandVideo(req.params)
+            res.download(data.path,data.filename)
+        } catch (error) {
+            next(error)
+        }
+    }
 
 }
 
