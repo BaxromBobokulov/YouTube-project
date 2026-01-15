@@ -5,7 +5,8 @@ class FilesController {
 
     async PostVideo(req,res,next){
     try {
-        const data = await filesService.PostVideo(req.body,req.files)
+        const data = await filesService.PostVideo(req.body,req.files,req.user)
+        // console.log(req.user)
         res.status(200).json({
             status:200,
             message:"Video uploaded successfully"
@@ -90,6 +91,19 @@ class FilesController {
         try {
             const data = await filesService.DowlandVideo(req.params)
             res.download(data.path,data.filename)
+        } catch (error) {
+            next(error)
+        }
+    }
+
+    async GetInfoByToken(req,res,next){
+        try {
+            const data = await filesService.GetInfoByToken(req.user)
+            res.status(200).json({
+                status:200,
+                file:data.file
+            })
+            
         } catch (error) {
             next(error)
         }

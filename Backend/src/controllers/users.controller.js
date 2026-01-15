@@ -1,3 +1,4 @@
+import { access } from "fs";
 import usersService from "../services/users.service.js";
 
 class UserController {
@@ -8,7 +9,10 @@ class UserController {
             const data = await usersService.Register(req.body,req.files)
             res.status(200).json({
                 status:200,
-                message:"Registered susseccfully"
+                message:"Registered susseccfully",
+                accessToken:data.accessToken,
+                refreshToken:data.refreshToken,
+                avatar:data.avatar
             })
             
         } catch (error) {
@@ -23,9 +27,10 @@ class UserController {
                 status:200,
                 message:"Login susseccfully",
                 accesstoken:data.accessToken ?? "token not exists",
-                refreshtoken:data.refreshToken ?? "token not exists"
+                refreshtoken:data.refreshToken ?? "token not exists",
+                avatar:data.avatar
             })
-            
+                
         } catch (error) {
             next(error)
         }

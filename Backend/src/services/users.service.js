@@ -4,6 +4,7 @@ import JWT from "jsonwebtoken"
 import { config } from "dotenv";
 import bcrypt from "bcrypt"
 import fs from "fs"
+import {ConflictError, NotFoundError} from "../utils/error.js"
 config()
 
 class UserService {
@@ -11,21 +12,29 @@ class UserService {
 
     async Register(body,files){
         const {username,password} = body
-        const {file} = files
+        const { uploadFile: File } = files
 
-        const filename = Date.now() + extname(file.name)
+        const filename = Date.now() + extname(File.name)
         const path = join(process.cwd(),"src","uploads",filename)
         
-        const existsUsername = await pool.query("Select * from users where username = $1",[username])
+        const existsUsername = await pool.query("Select * from users where username = $1 ",[username])
         if(existsUsername.rows.length != 0){
             throw new ConflictError(409,"This username already taken")
         }
 
-        await file.mv(path)
+        await File.mv(path)
 
         const passHash = await bcrypt.hash(password,10)
 
-        await pool.query("Insert into users(username,password,avatar) values($1,$2,$3) ",[username,passHash,filename])
+        const FoundUser = await pool.query("Insert into users(username,password,avatar) values($1,$2,$3) returning *",[username,passHash,filename])
+
+        let id = FoundUser.rows[0].id
+        let tokenusername = FoundUser.rows[0].username
+        return {
+            accessToken:JWT.sign({id,tokenusername},process.env.SECRET,{expiresIn:'15m'}),
+            refreshToken:JWT.sign({id,tokenusername},process.env.SECRET,{expiresIn:'1d'}),
+            avatar:FoundUser.rows[0].avatar
+        }
     }
  
     async Login(body){
@@ -46,7 +55,9 @@ class UserService {
         let tokenusername = FoundUser.rows[0].username
         return {
             accessToken:JWT.sign({id,tokenusername},process.env.SECRET,{expiresIn:'15m'}),
-            refreshToken:JWT.sign({id,tokenusername},process.env.SECRET,{expiresIn:'1d'})
+            refreshToken:JWT.sign({id,tokenusername},process.env.SECRET,{expiresIn:'1d'}),
+            avatar:FoundUser.rows[0].avatar
+
         }
     }
 
@@ -65,9 +76,7 @@ class UserService {
 
         const FoundUser = await pool.query("select * from users where id = $1",[id])
         if(FoundUser.rows.length === 0){
-            const error = new Error("User not found")
-            error.statusCode = 404
-            throw error
+            throw new NotFoundError(404,"User not found")
         }
 
         await pool.query("Delete from users where id = $1",[id])
@@ -80,9 +89,7 @@ class UserService {
         
         const FoundUser = await pool.query("select * from users where id = $1",[id])
         if(FoundUser.rows.length === 0){
-            const error = new Error("User not found")
-            error.statusCode = 404
-            throw error
+            throw new NotFoundError(404,"User not found")
         }
         
         let newUsername = body?.username ?? FoundUser.rows[0].username

@@ -6,6 +6,7 @@ import pool from "../database/config.js"
 export default async(req,res,next)=> {
     try {
         const {token} = req.headers
+        // console.log(token,req.headers)
         if(!token){
             throw new UnauthorizedError(401,"Cannot upload video without token")
     }

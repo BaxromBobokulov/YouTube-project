@@ -1,33 +1,90 @@
 
-[Sun Jan 11 2026 00:23:39 GMT+0500 (Uzbekistan Standard Time)]--POST--/api/upload--undefined
-[Sun Jan 11 2026 09:29:08 GMT+0500 (Uzbekistan Standard Time)]--POST--/api/upload--undefined
-[Sun Jan 11 2026 09:29:39 GMT+0500 (Uzbekistan Standard Time)]--POST--/api/upload--undefined
-[Sun Jan 11 2026 09:33:01 GMT+0500 (Uzbekistan Standard Time)]--POST--/api/upload--undefined
-[Sun Jan 11 2026 09:33:19 GMT+0500 (Uzbekistan Standard Time)]--POST--/api/upload--undefined
-[Sun Jan 11 2026 10:12:23 GMT+0500 (Uzbekistan Standard Time)]--PUT--/api/edit--undefined
-[Sun Jan 11 2026 10:13:08 GMT+0500 (Uzbekistan Standard Time)]--PUT--/api/edit--undefined
-[Sun Jan 11 2026 10:14:16 GMT+0500 (Uzbekistan Standard Time)]--PUT--/api/edit--undefined
-[Sun Jan 11 2026 10:15:27 GMT+0500 (Uzbekistan Standard Time)]--PUT--/api/edit--undefined
-[Sun Jan 11 2026 10:15:34 GMT+0500 (Uzbekistan Standard Time)]--PUT--/api/edit--undefined
-[Sun Jan 11 2026 10:15:55 GMT+0500 (Uzbekistan Standard Time)]--PUT--/api/edit--undefined
-[Sun Jan 11 2026 10:17:00 GMT+0500 (Uzbekistan Standard Time)]--PUT--/api/edit--undefined
-[Sun Jan 11 2026 10:18:20 GMT+0500 (Uzbekistan Standard Time)]--PUT--/api/edit--undefined
-[Sun Jan 11 2026 10:18:39 GMT+0500 (Uzbekistan Standard Time)]--PUT--/api/edit--undefined
-[Sun Jan 11 2026 10:19:04 GMT+0500 (Uzbekistan Standard Time)]--PUT--/api/edit--undefined
-[Sun Jan 11 2026 10:19:06 GMT+0500 (Uzbekistan Standard Time)]--PUT--/api/edit--undefined
-[Sun Jan 11 2026 10:19:07 GMT+0500 (Uzbekistan Standard Time)]--PUT--/api/edit--undefined
-[Sun Jan 11 2026 10:19:08 GMT+0500 (Uzbekistan Standard Time)]--PUT--/api/edit--undefined
-[Sun Jan 11 2026 10:21:26 GMT+0500 (Uzbekistan Standard Time)]--PUT--/api/edit--undefined
-[Sun Jan 11 2026 10:22:52 GMT+0500 (Uzbekistan Standard Time)]--PUT--/api/edit--undefined
-[Sun Jan 11 2026 18:14:10 GMT+0500 (Uzbekistan Standard Time)]--PUT--/api/edit--undefined
-[Sun Jan 11 2026 18:14:12 GMT+0500 (Uzbekistan Standard Time)]--PUT--/api/edit--undefined
-[Sun Jan 11 2026 18:16:14 GMT+0500 (Uzbekistan Standard Time)]--PUT--/api/edit--undefined
-[Sun Jan 11 2026 18:29:11 GMT+0500 (Uzbekistan Standard Time)]--PUT--/api/edit--undefined
-[Sun Jan 11 2026 18:30:23 GMT+0500 (Uzbekistan Standard Time)]--PUT--/api/edit--undefined
-[Mon Jan 12 2026 08:58:35 GMT+0500 (Uzbekistan Standard Time)]--GET--/api/search--undefined
-[Mon Jan 12 2026 08:59:31 GMT+0500 (Uzbekistan Standard Time)]--GET--/api/search--undefined
-[Mon Jan 12 2026 08:59:59 GMT+0500 (Uzbekistan Standard Time)]--GET--/api/search--undefined
-[Mon Jan 12 2026 09:00:06 GMT+0500 (Uzbekistan Standard Time)]--GET--/api/search--undefined
-[Mon Jan 12 2026 09:00:33 GMT+0500 (Uzbekistan Standard Time)]--GET--/api/search--undefined
-[Mon Jan 12 2026 09:00:47 GMT+0500 (Uzbekistan Standard Time)]--GET--/api/search--undefined
-[Mon Jan 12 2026 09:00:54 GMT+0500 (Uzbekistan Standard Time)]--GET--/api/search--undefined
+[Tue Jan 13 2026 20:01:12 GMT+0500 (Uzbekistan Standard Time)]--POST--/api/register--undefined--TypeError: Cannot read properties of undefined (reading 'id')
+    at UserService.Register (file:///C:/Users/User/OneDrive/Desktop/YouTube/Backend/src/services/users.service.js:31:41)
+    at async Register (file:///C:/Users/User/OneDrive/Desktop/YouTube/Backend/src/controllers/users.controller.js:9:26)
+[Tue Jan 13 2026 20:20:40 GMT+0500 (Uzbekistan Standard Time)]--POST--/api/register--undefined--TypeError: Cannot read properties of undefined (reading 'id')
+    at UserService.Register (file:///C:/Users/User/OneDrive/Desktop/YouTube/Backend/src/services/users.service.js:31:41)
+    at async Register (file:///C:/Users/User/OneDrive/Desktop/YouTube/Backend/src/controllers/users.controller.js:9:26)
+[Tue Jan 13 2026 20:33:17 GMT+0500 (Uzbekistan Standard Time)]--POST--/api/register--undefined--error: syntax error at or near "returning"
+    at C:\Users\User\OneDrive\Desktop\YouTube\Backend\node_modules\pg-pool\index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async UserService.Register (file:///C:/Users/User/OneDrive/Desktop/YouTube/Backend/src/services/users.service.js:20:32)
+    at async Register (file:///C:/Users/User/OneDrive/Desktop/YouTube/Backend/src/controllers/users.controller.js:9:26)
+[Wed Jan 14 2026 09:20:24 GMT+0500 (Uzbekistan Standard Time)]--POST--/api/register--undefined--TypeError: Cannot read properties of undefined (reading 'name')
+    at UserService.Register (file:///C:/Users/User/OneDrive/Desktop/YouTube/Backend/src/services/users.service.js:17:52)
+    at Register (file:///C:/Users/User/OneDrive/Desktop/YouTube/Backend/src/controllers/users.controller.js:9:45)
+    at Layer.handleRequest (C:\Users\User\OneDrive\Desktop\YouTube\Backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\User\OneDrive\Desktop\YouTube\Backend\node_modules\router\lib\route.js:157:13)
+    at register (file:///C:/Users/User/OneDrive/Desktop/YouTube/Backend/src/middleware/validion.js:13:13)
+    at Layer.handleRequest (C:\Users\User\OneDrive\Desktop\YouTube\Backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\User\OneDrive\Desktop\YouTube\Backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\User\OneDrive\Desktop\YouTube\Backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\User\OneDrive\Desktop\YouTube\Backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\User\OneDrive\Desktop\YouTube\Backend\node_modules\router\lib\layer.js:152:17)
+[Wed Jan 14 2026 17:40:09 GMT+0500 (Uzbekistan Standard Time)]--POST--/api/register--undefined--TypeError: Cannot read properties of undefined (reading 'name')
+    at UserService.Register (file:///C:/Users/User/OneDrive/Desktop/YouTube/Backend/src/services/users.service.js:17:52)
+    at Register (file:///C:/Users/User/OneDrive/Desktop/YouTube/Backend/src/controllers/users.controller.js:9:45)
+    at Layer.handleRequest (C:\Users\User\OneDrive\Desktop\YouTube\Backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\User\OneDrive\Desktop\YouTube\Backend\node_modules\router\lib\route.js:157:13)
+    at register (file:///C:/Users/User/OneDrive/Desktop/YouTube/Backend/src/middleware/validion.js:13:13)
+    at Layer.handleRequest (C:\Users\User\OneDrive\Desktop\YouTube\Backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\User\OneDrive\Desktop\YouTube\Backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\User\OneDrive\Desktop\YouTube\Backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\User\OneDrive\Desktop\YouTube\Backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\User\OneDrive\Desktop\YouTube\Backend\node_modules\router\lib\layer.js:152:17)
+[Wed Jan 14 2026 18:51:36 GMT+0500 (Uzbekistan Standard Time)]--POST--/api/upload--undefined--JsonWebTokenError: jwt malformed
+    at module.exports [as verify] (C:\Users\User\OneDrive\Desktop\YouTube\Backend\node_modules\jsonwebtoken\verify.js:70:17)
+    at default (file:///C:/Users/User/OneDrive/Desktop/YouTube/Backend/src/middleware/chekcToken.js:14:22)
+    at Layer.handleRequest (C:\Users\User\OneDrive\Desktop\YouTube\Backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\User\OneDrive\Desktop\YouTube\Backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\User\OneDrive\Desktop\YouTube\Backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\User\OneDrive\Desktop\YouTube\Backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\User\OneDrive\Desktop\YouTube\Backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\User\OneDrive\Desktop\YouTube\Backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\User\OneDrive\Desktop\YouTube\Backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\User\OneDrive\Desktop\YouTube\Backend\node_modules\router\index.js:291:5)
+[Wed Jan 14 2026 18:53:27 GMT+0500 (Uzbekistan Standard Time)]--POST--/api/upload--undefined--JsonWebTokenError: jwt malformed
+    at module.exports [as verify] (C:\Users\User\OneDrive\Desktop\YouTube\Backend\node_modules\jsonwebtoken\verify.js:70:17)
+    at default (file:///C:/Users/User/OneDrive/Desktop/YouTube/Backend/src/middleware/chekcToken.js:14:22)
+    at Layer.handleRequest (C:\Users\User\OneDrive\Desktop\YouTube\Backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\User\OneDrive\Desktop\YouTube\Backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\User\OneDrive\Desktop\YouTube\Backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\User\OneDrive\Desktop\YouTube\Backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\User\OneDrive\Desktop\YouTube\Backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\User\OneDrive\Desktop\YouTube\Backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\User\OneDrive\Desktop\YouTube\Backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\User\OneDrive\Desktop\YouTube\Backend\node_modules\router\index.js:291:5)
+[Wed Jan 14 2026 19:00:24 GMT+0500 (Uzbekistan Standard Time)]--POST--/api/upload--undefined--ReferenceError: user is not defined
+    at FilesService.PostVideo (file:///C:/Users/User/OneDrive/Desktop/YouTube/Backend/src/services/files.service.js:11:22)
+    at PostVideo (file:///C:/Users/User/OneDrive/Desktop/YouTube/Backend/src/controllers/files.controller.js:8:41)
+    at Layer.handleRequest (C:\Users\User\OneDrive\Desktop\YouTube\Backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\User\OneDrive\Desktop\YouTube\Backend\node_modules\router\lib\route.js:157:13)
+    at PostVideoShchema (file:///C:/Users/User/OneDrive/Desktop/YouTube/Backend/src/middleware/validion.js:48:13)
+    at Layer.handleRequest (C:\Users\User\OneDrive\Desktop\YouTube\Backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\User\OneDrive\Desktop\YouTube\Backend\node_modules\router\lib\route.js:157:13)
+    at default (file:///C:/Users/User/OneDrive/Desktop/YouTube/Backend/src/middleware/chekcToken.js:22:5)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[Wed Jan 14 2026 19:29:16 GMT+0500 (Uzbekistan Standard Time)]--GET--/api/userinfo--undefined--undefined
+[Wed Jan 14 2026 19:29:45 GMT+0500 (Uzbekistan Standard Time)]--GET--/api/userinfo--undefined--undefined
+[Thu Jan 15 2026 08:33:27 GMT+0500 (Uzbekistan Standard Time)]--GET--/api/userinfo--undefined--undefined
+[Thu Jan 15 2026 09:42:10 GMT+0500 (Uzbekistan Standard Time)]--DELETE--/api/remove/undefined--undefined--error: invalid input syntax for type integer: "undefined"
+    at C:\Users\User\OneDrive\Desktop\YouTube\Backend\node_modules\pg-pool\index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async FilesService.DeleteVideoById (file:///C:/Users/User/OneDrive/Desktop/YouTube/Backend/src/services/files.service.js:57:28)
+    at async DeleteVideoById (file:///C:/Users/User/OneDrive/Desktop/YouTube/Backend/src/controllers/files.controller.js:34:26)
+[Thu Jan 15 2026 09:42:20 GMT+0500 (Uzbekistan Standard Time)]--DELETE--/api/remove/undefined--undefined--error: invalid input syntax for type integer: "undefined"
+    at C:\Users\User\OneDrive\Desktop\YouTube\Backend\node_modules\pg-pool\index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async FilesService.DeleteVideoById (file:///C:/Users/User/OneDrive/Desktop/YouTube/Backend/src/services/files.service.js:57:28)
+    at async DeleteVideoById (file:///C:/Users/User/OneDrive/Desktop/YouTube/Backend/src/controllers/files.controller.js:34:26)
+[Thu Jan 15 2026 09:43:20 GMT+0500 (Uzbekistan Standard Time)]--DELETE--/api/remove/undefined--undefined--error: invalid input syntax for type integer: "undefined"
+    at C:\Users\User\OneDrive\Desktop\YouTube\Backend\node_modules\pg-pool\index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async FilesService.DeleteVideoById (file:///C:/Users/User/OneDrive/Desktop/YouTube/Backend/src/services/files.service.js:57:28)
+    at async DeleteVideoById (file:///C:/Users/User/OneDrive/Desktop/YouTube/Backend/src/controllers/files.controller.js:34:26)
+[Thu Jan 15 2026 09:45:53 GMT+0500 (Uzbekistan Standard Time)]--GET--/api/userinfo--undefined--undefined
+[Thu Jan 15 2026 10:47:54 GMT+0500 (Uzbekistan Standard Time)]--GET--/api/userinfo--undefined--undefined
+[Thu Jan 15 2026 10:48:33 GMT+0500 (Uzbekistan Standard Time)]--GET--/api/userinfo--undefined--undefined
+[Thu Jan 15 2026 10:49:34 GMT+0500 (Uzbekistan Standard Time)]--GET--/api/userinfo--undefined--undefined
+[Thu Jan 15 2026 10:50:27 GMT+0500 (Uzbekistan Standard Time)]--GET--/api/userinfo--undefined--undefined
+[Thu Jan 15 2026 14:59:53 GMT+0500 (Uzbekistan Standard Time)]--GET--/api/userinfo--undefined--undefined
