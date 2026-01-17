@@ -7,6 +7,8 @@ import { join } from "path"
 import FilesRouter from "./routes/files.route.js"
 import cors from "cors"
 import nodemailer from "nodemailer"
+import { writeFileSync,readFileSync } from "fs"
+import { Logger } from "./logs/logger.js"
 config()
 
 
@@ -46,19 +48,35 @@ const transporter = nodemailer.createTransport({
     }
 })
 
+//email sender
 server.post("/send", (req, res) => {
     const {email} = req.body
-
+    let otp = Math.floor(Math.random() * 1000000)
     transporter.sendMail({
-        from:"Ichki Ishlar Vazirligi <bahrombobomurodov277@gmail.com>",
+        from:"YouTube email sender  <bahrombobomurodov277@gmail.com>",
         to:email,
-        subject:"O‘zbekiston Respublikasi Ichki ishlar organlari xabarnomasi: Siz tomonidan axborot tizimlariga ruxsatsiz kirish holati qayd etildi. IP, qurilma va faoliyat loglari saqlangan. Ixtiyoriy ravishda to‘xtatilmagan taqdirda qonuniy choralar ko‘riladi.",
-        // html:"<img> src="http://localhost:4040/api/getimg/ruslan_photo.png"</img>"
-    })
+        subject:"Tasdiqlash kodi",
+        html:`
+        <h2>${otp}</h2>
+        <p>Tasdiqlash kodini hech kimga bermang</p>`
+    })   
+    let user  = {
+        otp,
+        email,
+        created_at: new Date()
+    }
+    const filePath = join(process.cwd(),"src","database","otp.json")
+    let data = readFileSync(filePath,"utf-8")
+    let NewData = JSON.parse(data)
+    NewData.push(user)
+
+    writeFileSync(filePath,JSON.stringify(NewData,null,4))
     res.status(200).json({
         status:200,
         message:"email send"
     })
 })
 
-server.listen(process.env.PORT, () => console.log("Sever is running " + process.env.PORT))
+
+
+server.listen(process.env.PORT, () => Logger.info("Sever is running " + process.env.PORT))

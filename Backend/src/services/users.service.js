@@ -5,6 +5,7 @@ import { config } from "dotenv";
 import bcrypt from "bcrypt"
 import fs from "fs"
 import {ConflictError, NotFoundError} from "../utils/error.js"
+import { Logger } from "../logs/logger.js";
 config()
 
 class UserService {
@@ -19,6 +20,7 @@ class UserService {
         
         const existsUsername = await pool.query("Select * from users where username = $1 ",[username])
         if(existsUsername.rows.length != 0){
+            Logger.error("This username already taken")
             throw new ConflictError(409,"This username already taken")
         }
 

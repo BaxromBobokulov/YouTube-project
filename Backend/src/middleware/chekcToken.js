@@ -1,6 +1,7 @@
 import JWT from "jsonwebtoken"
 import { NotFoundError, UnauthorizedError } from "../utils/error.js"
 import pool from "../database/config.js"
+// import Logger from "../logs/logger.js"
 
 
 export default async(req,res,next)=> {
@@ -15,6 +16,7 @@ export default async(req,res,next)=> {
 
     const FoundUser = await pool.query("Select * from users where id  = $1",[data.id])
     if(FoundUser.rows.length === 0){
+        // Logger.error("User not found")
         throw new NotFoundError(404,"User not found")
     }
 
